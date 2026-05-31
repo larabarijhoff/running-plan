@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Geles · Plan 21K BA · Lara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a17;
+    --ink-soft: #3d3d38;
+    --ink-muted: #807d75;
+    --ink-faint: #b8b4a8;
+    --paper: #faf8f3;
+    --paper-warm: #f3efe5;
+    --rule: #d8d3c4;
+    --rule-soft: #e8e3d6;
+    --accent: #6b5d3e;
+    --accent-soft: #ede4cc;
+    --moss: #4a5d3a;
+    --rust: #8b4a2b;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 80px 60px 120px;
+  }
+
+  /* ===== HEADER ===== */
+  .hero {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+  }
+
+  .hero-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 40px;
+  }
+
+  .hero-meta-divider::before {
+    content: "·";
+    margin: 0 12px;
+    color: var(--ink-faint);
+  }
+
+  h1.hero-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 88px;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+
+  h1.hero-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+
+  .hero-subtitle {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 640px;
+    margin-bottom: 40px;
+    font-style: italic;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 38px;
+    line-height: 1;
+    color: var(--ink);
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  /* ===== SECTION ===== */
+  section {
+    margin-bottom: 80px;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  h2 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .lead {
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    font-weight: 300;
+    max-width: 680px;
+    margin-bottom: 36px;
+  }
+
+  h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.2;
+    margin: 40px 0 16px;
+    color: var(--ink);
+  }
+
+  h4 {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    margin: 28px 0 12px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: var(--ink-soft);
+  }
+
+  ul, ol {
+    margin: 0 0 20px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 10px;
+    color: var(--ink-soft);
+  }
+
+  ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: var(--serif);
+  }
+
+  ul li strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  strong {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  /* ===== TWO COLUMN ===== */
+  .two-col {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .two-col:last-child {
+    border-bottom: none;
+  }
+
+  .two-col-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    padding-top: 6px;
+  }
+
+  /* ===== GEL CARDS ===== */
+  .gel {
+    border-top: 1px solid var(--rule);
+    padding: 36px 0;
+    position: relative;
+  }
+
+  .gel:last-of-type {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .gel-recommended {
+    padding-left: 28px;
+  }
+
+  .gel-recommended::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 36px;
+    bottom: 36px;
+    width: 3px;
+    background: var(--accent);
+  }
+
+  .gel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .gel-name {
+    font-family: var(--serif);
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+
+  .gel-tag {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-muted);
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .gel-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 4px 10px;
+    border: 1px solid var(--accent);
+    background: var(--paper);
+    white-space: nowrap;
+  }
+
+  .gel-grid {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 20px 40px;
+    margin-top: 20px;
+  }
+
+  .gel-key {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    padding-top: 4px;
+  }
+
+  .gel-val {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+
+  .gel-val.ingredients {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  .gel-note {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--paper-warm);
+    border-left: 2px solid var(--accent);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  /* ===== COMPARISON TABLE ===== */
+  table.compare {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px 0;
+    font-size: 14px;
+  }
+
+  table.compare th,
+  table.compare td {
+    text-align: left;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--rule-soft);
+    vertical-align: top;
+  }
+
+  table.compare th {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 500;
+    background: var(--paper-warm);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  table.compare td:first-child {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    width: 35%;
+  }
+
+  table.compare td:nth-child(2),
+  table.compare td:nth-child(3) {
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+
+  /* ===== RANKING ===== */
+  .ranking {
+    list-style: none;
+    counter-reset: rank;
+    padding: 0;
+    margin: 24px 0;
+  }
+
+  .ranking li {
+    counter-increment: rank;
+    position: relative;
+    padding: 16px 0 16px 60px;
+    border-bottom: 1px solid var(--rule-soft);
+    color: var(--ink-soft);
+    font-size: 15px;
+  }
+
+  .ranking li::before {
+    content: counter(rank, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 16px;
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .ranking li::after {
+    display: none;
+  }
+
+  .ranking li strong {
+    display: block;
+    color: var(--ink);
+    font-size: 17px;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  .ranking-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+
+  /* ===== CALLOUTS ===== */
+  .callout {
+    background: var(--paper-warm);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+    margin: 32px 0;
+  }
+
+  .callout-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .callout p {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    font-style: italic;
+    margin: 0;
+  }
+
+  .callout strong {
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* ===== CALENDAR ===== */
+  table.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 32px 0;
+    font-size: 13.5px;
+  }
+
+  table.calendar th {
+    text-align: left;
+    padding: 12px 14px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 500;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-warm);
+  }
+
+  table.calendar td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--rule-soft);
+    vertical-align: top;
+    color: var(--ink-soft);
+  }
+
+  table.calendar td:first-child {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-muted);
+    white-space: nowrap;
+    width: 90px;
+  }
+
+  table.calendar td:nth-child(2) {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-muted);
+    white-space: nowrap;
+    width: 80px;
+  }
+
+  table.calendar tr.highlight td {
+    background: var(--accent-soft);
+    color: var(--ink);
+  }
+
+  table.calendar tr.highlight td:first-child,
+  table.calendar tr.highlight td:nth-child(2) {
+    color: var(--accent);
+  }
+
+  table.calendar .gel-mark {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* ===== BUY LIST ===== */
+  .buy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+  }
+
+  .buy-table th {
+    text-align: left;
+    padding: 12px 14px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 500;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .buy-table td {
+    padding: 14px 14px;
+    border-bottom: 1px solid var(--rule-soft);
+    color: var(--ink-soft);
+    vertical-align: top;
+  }
+
+  .buy-table tr.total td {
+    border-top: 2px solid var(--ink);
+    border-bottom: none;
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--ink);
+    padding-top: 18px;
+  }
+
+  .buy-table td.num {
+    font-family: var(--mono);
+    text-align: right;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  /* ===== STORE LIST ===== */
+  .stores {
+    margin: 24px 0;
+  }
+
+  .store {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 32px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+
+  .store:last-child { border-bottom: none; }
+
+  .store-name {
+    font-family: var(--serif);
+    font-size: 19px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .store-info {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    margin-top: 100px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-muted);
+    line-height: 1.7;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ===== STRIP / DIVIDER ===== */
+  .strip {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 48px 0;
+  }
+
+  .strip-line {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .strip-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--accent);
+    font-size: 14px;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 720px) {
+    .container { padding: 40px 24px 80px; }
+    h1.hero-title { font-size: 56px; }
+    h2 { font-size: 32px; }
+    .gel-grid { grid-template-columns: 1fr; gap: 8px; }
+    .gel-key { padding-top: 0; margin-top: 8px; }
+    .two-col { grid-template-columns: 1fr; gap: 12px; }
+    .store { grid-template-columns: 1fr; gap: 8px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 20px; }
+    table.calendar td:first-child,
+    table.calendar td:nth-child(2) { font-size: 10.5px; }
+  }
+
+  @media print {
+    body { background: white; }
+    .container { padding: 30px; max-width: none; }
+    .gel, section { page-break-inside: avoid; }
+    h2 { page-break-after: avoid; }
+  }
+
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 48px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .back-btn::before {
+    content: '←';
+    font-size: 13px;
+  }
+
+  .back-btn:hover {
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <a href="index.html" class="back-btn">Volver al plan</a>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="hero-meta">
+      <span>Guía personal · Lara<span class="hero-meta-divider"></span>Investigación mayo 2026</span>
+      <span>Race day · 23.08.2026</span>
+    </div>
+
+    <h1 class="hero-title">Geles, <em>naturalmente</em>.</h1>
+
+    <p class="hero-subtitle">Lo que comprar, dónde, y para qué — una guía construida sobre tu plan 21K, tu filosofía de fueling, y un viaje a San Francisco en el medio.</p>
+
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">7</div>
+        <div class="stat-label">Marcas analizadas</div>
+      </div>
+      <div>
+        <div class="stat-num">2</div>
+        <div class="stat-label">Ciudades cubiertas</div>
+      </div>
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Races · 1 objetivo</div>
+      </div>
+      <div>
+        <div class="stat-num">19</div>
+        <div class="stat-label">Semanas de plan</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ SECTION 01 — CRITERIO ============ -->
+  <section>
+    <div class="section-label">01 · Criterio</div>
+    <h2>Cómo evaluar <em>cada gel</em>.</h2>
+    <p class="lead">No todos los geles que se venden como "naturales" lo son. Este es el filtro que apliqué para rankear cada marca — basado en consenso científico 2026 y tu filosofía declarada en el plan.</p>
+
+    <div class="two-col">
+      <div class="two-col-label">Buscamos</div>
+      <div>
+        <ul>
+          <li><strong>Glucosa + fructosa de fuentes reales</strong> (frutas, miel, maple, arroz)</li>
+          <li><strong>Ratio fructosa:glucosa entre 0.8:1 y 1:1</strong> — absorción óptima sin malestar</li>
+          <li><strong>Pocos ingredientes</strong> — idealmente menos de 7</li>
+          <li><strong>Electrolitos de origen natural</strong> (sal marina, sal himalaya, frutas)</li>
+          <li><strong>Carbos por sachet entre 20–30g</strong> — suficiente para 30–45min de fueling</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="two-col-label">Evitamos</div>
+      <div>
+        <ul>
+          <li><strong>Conservantes</strong> — sorbato de potasio, benzoato de sodio</li>
+          <li><strong>Saborizantes</strong> — naturales o artificiales aislados</li>
+          <li><strong>BCAAs sintéticos aislados</strong> — leucina, valina, isoleucina; irrelevantes en races cortas</li>
+          <li><strong>Maltodextrina como base principal</strong> — no es "mala" pero es muy procesada</li>
+          <li><strong>Aditivos</strong> — taurina, guaraná aislado, extractos sintéticos, colorantes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">Nota importante</div>
+      <p>La maltodextrina es segura y efectiva, simplemente no encaja con la filosofía de fueling natural del plan. Marcas populares como GU y Nutremax la usan como base y son perfectamente válidas si no buscás el extremo natural.</p>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 02 — BUENOS AIRES ============ -->
+  <section>
+    <div class="section-label">02 · Buenos Aires</div>
+    <h2>Lo que conseguís <em>acá</em>.</h2>
+    <p class="lead">Marcas disponibles en CABA y con envío nacional. Ordenadas por limpieza de ingredientes — del más natural al más procesado.</p>
+
+    <!-- CHITAKA -->
+    <div class="gel gel-recommended">
+      <div class="gel-header">
+        <h3 class="gel-name">Chitaka Energy</h3>
+        <span class="gel-badge">★ Recomendada</span>
+      </div>
+      <div class="gel-tag">Argentino · 100% ingredientes naturales</div>
+
+      <div class="gel-grid">
+        <div class="gel-key">Ingredientes</div>
+        <div class="gel-val ingredients">Frutilla & Banana — reducción de frutas reales, sirope de arroz, miel, dátiles, jugo de limón.<br><br>Vainilla & Boniato — puré de boniato, dátiles, miel, cacao, esencia natural de vainilla.</div>
+
+        <div class="gel-key">Carbos</div>
+        <div class="gel-val">22g por sachet (40g) · 88 kcal · 100mg sodio · 40mg potasio</div>
+
+        <div class="gel-key">Dónde</div>
+        <div class="gel-val">chitaka.store (envío nacional) · Tienda Runner · WhatsApp +54 9 11 7517-3499</div>
+
+        <div class="gel-key">Precio</div>
+        <div class="gel-val">$3.300–$3.705 ARS por gel (más barato con x12 o x36)</div>
+      </div>
+
+      <div class="gel-note">Es literalmente la versión empaquetada de tu estrategia de dátiles + miel. Sin sorpresas para tu sistema digestivo.</div>
+    </div>
+
+    <!-- MAURTEN -->
+    <div class="gel gel-recommended">
+      <div class="gel-header">
+        <h3 class="gel-name">Maurten Gel 100</h3>
+        <span class="gel-badge">★ Race day</span>
+      </div>
+      <div class="gel-tag">Sueco · estándar mundial · hidrogel patentado</div>
+
+      <div class="gel-grid">
+        <div class="gel-key">Ingredientes</div>
+        <div class="gel-val ingredients">Agua, glucosa, fructosa, alginato de sodio, ácido glucónico, carbonato de calcio. Versión Caf 100 agrega cafeína.</div>
+
+        <div class="gel-key">Carbos</div>
+        <div class="gel-val">25g por sachet (40g) · 100 kcal · sabor neutro</div>
+
+        <div class="gel-key">Dónde</div>
+        <div class="gel-val">MercadoLibre (varios vendedores) · runcito.com.ar · tristore.shop · sumitate.com.ar</div>
+
+        <div class="gel-key">Precio</div>
+        <div class="gel-val">~$2.200 ARS por gel individual · caja x12 con descuento</div>
+      </div>
+
+      <div class="gel-note">Ratio glucosa:fructosa 0.8:1 científicamente óptimo. Permite hasta 100g carbs/hora sin malestar. Lo usan Kipchoge, Boston, Berlín, Chicago.</div>
+    </div>
+
+    <!-- EI GEL -->
+    <div class="gel">
+      <div class="gel-header">
+        <h3 class="gel-name">Ei Gel</h3>
+      </div>
+      <div class="gel-tag">Argentino · desarrollado con INTI · sin conservantes</div>
+
+      <div class="gel-grid">
+        <div class="gel-key">Ingredientes</div>
+        <div class="gel-val ingredients">Carbohidratos simples, sabores naturales. Fabricante declara: sin conservantes ni químicos. Sin lista detallada pública.</div>
+
+        <div class="gel-key">Carbos</div>
+        <div class="gel-val">30g por sachet (46g) — el que más carbos aporta del listado</div>
+
+        <div class="gel-key">Dónde</div>
+        <div class="gel-val">Tienda Runner · baiking.com.ar · varios bike shops</div>
+
+        <div class="gel-key">Precio</div>
+        <div class="gel-val">~$4.045 ARS por gel</div>
+      </div>
+
+      <div class="gel-note">Alternativa nacional si Chitaka no convence. Apto celíacos. Tiene versión con y sin cafeína.</div>
+    </div>
+
+    <!-- PONT -->
+    <div class="gel">
+      <div class="gel-header">
+        <h3 class="gel-name">Pont SmartBased</h3>
+      </div>
+      <div class="gel-tag">Argentino · mosto de uva real, pero con conservantes</div>
+
+      <div class="gel-grid">
+        <div class="gel-key">Ingredientes</div>
+        <div class="gel-val ingredients">Mosto de uva, maltodextrina, agua, Palatinose™ (isomaltulosa), sal marina, conservantes (benzoato de sodio + sorbato de potasio), aroma sabor caramelo.</div>
+
+        <div class="gel-key">Carbos</div>
+        <div class="gel-val">30g por sachet (43g) · 121 kcal · 95mg sodio · ratio glucosa:fructosa 2:1 · versión con cafeína 70mg</div>
+
+        <div class="gel-key">Dónde</div>
+        <div class="gel-val">pont.ar (directo, envío gratis con x12) · Plant · Aldea Ecológica · Naka Outdoors</div>
+
+        <div class="gel-key">Precio</div>
+        <div class="gel-val">~$2.460 ARS por gel (caja x12 a $29.500) — el más barato de los con mosto real</div>
+      </div>
+
+      <div class="gel-note">Zona intermedia interesante. Mejor que Nutremax/GU porque parte de mosto de uva y suma Palatinose, pero no llega al nivel de Chitaka/Maurten por los conservantes y saborizantes. Si necesitás un gel argentino accesible para algún entreno sin gastar en Chitaka, el sabor neutro es la mejor opción del segmento intermedio.</div>
+    </div>
+
+    <!-- NUTREMAX -->
+    <div class="gel">
+      <div class="gel-header">
+        <h3 class="gel-name">Nutremax Energy Gel</h3>
+      </div>
+      <div class="gel-tag">Argentino · funcional pero cargado de aditivos</div>
+
+      <div class="gel-grid">
+        <div class="gel-key">Ingredientes</div>
+        <div class="gel-val ingredients">Maltodextrina, agua, fructosa cristal, isomaltulosa, cloruro de sodio, fosfato de calcio, cafeína anhidra, taurina, extracto de guaraná, saborizantes, conservantes (sorbato de potasio, benzoato de sodio), acidulante.</div>
+
+        <div class="gel-key">Carbos</div>
+        <div class="gel-val">~22g por sachet · combina 3 tipos de carbos: malto + fructosa + isomaltulosa</div>
+
+        <div class="gel-key">Dónde</div>
+        <div class="gel-val">sasuplementos.com · MercadoLibre · Tienda Runner</div>
+
+        <div class="gel-key">Precio</div>
+        <div class="gel-val">Caja x12 desde ~$36.000 ARS</div>
+      </div>
+
+      <div class="gel-note">No encaja en tu filosofía por los conservantes y el guaraná aislado, pero funciona muy bien. Plan B accesible si no querés cuidar tanto el detalle.</div>
+    </div>
+
+    <!-- GU -->
+    <div class="gel">
+      <div class="gel-header">
+        <h3 class="gel-name">GU Energy Gel</h3>
+      </div>
+      <div class="gel-tag">Americano · #1 mundial en ventas · lista más larga de aditivos</div>
+
+      <div class="gel-grid">
+        <div class="gel-key">Ingredientes</div>
+        <div class="gel-val ingredients">Maltodextrina, agua, fructosa, L-leucina, sal marina, ác. cítrico, saborizante natural, citrato de potasio, citrato de sodio, carbonato de calcio, L-valina, té verde (cafeína), goma gelan, L-isoleucina, aceite de girasol, benzoato de sodio, sorbato de potasio.</div>
+
+        <div class="gel-key">Carbos</div>
+        <div class="gel-val">22g por sachet · 100 kcal</div>
+
+        <div class="gel-key">Dónde</div>
+        <div class="gel-val">sumitate.com.ar (oficial) · MercadoLibre · tiendas runners CABA</div>
+
+        <div class="gel-key">Precio</div>
+        <div class="gel-val">~$5.400 ARS por gel</div>
+      </div>
+
+      <div class="gel-note">Bien tolerado por muchos corredores. Lista de ingredientes es la más larga de todas — no encaja con tu criterio.</div>
+    </div>
+
+    <h3 style="margin-top: 56px;">Ranking final · Buenos Aires</h3>
+    <ol class="ranking">
+      <li>
+        <strong>Chitaka</strong>
+        Frutas reales, sirope de arroz, miel, dátiles. Sin conservantes, sin saborizantes.
+        <div class="ranking-meta">★★★★★ · $3.300–3.705 / gel</div>
+      </li>
+      <li>
+        <strong>Maurten</strong>
+        6 ingredientes técnicos pero sin conservantes ni saborizantes.
+        <div class="ranking-meta">★★★★★ · $2.200 / gel</div>
+      </li>
+      <li>
+        <strong>Ei Gel</strong>
+        Sin conservantes según fabricante, composición no totalmente pública.
+        <div class="ranking-meta">★★★★ · $4.045 / gel</div>
+      </li>
+      <li>
+        <strong>Pont SmartBased</strong>
+        Mosto de uva real + Palatinose, pero tiene conservantes y saborizantes.
+        <div class="ranking-meta">★★★ · $2.460 / gel</div>
+      </li>
+      <li>
+        <strong>Nutremax</strong>
+        Conservantes + saborizantes + taurina + guaraná aislado.
+        <div class="ranking-meta">★★ · $3.000 / gel</div>
+      </li>
+      <li>
+        <strong>GU</strong>
+        La lista más larga de aditivos. BCAAs sintéticos.
+        <div class="ranking-meta">★ · $5.400 / gel</div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ SECTION 03 — SAN FRANCISCO ============ -->
+  <section>
+    <div class="section-label">03 · San Francisco</div>
+    <h2>Lo que conseguís <em>allá</em>.</h2>
+    <p class="lead">SF es el epicentro mundial de los "real food gels". Estas marcas o no llegan a Argentina o llegan a precios prohibitivos. El viaje de junio es la oportunidad para stockearse hasta el race day.</p>
+
+    <!-- UNTAPPED -->
+    <div class="gel gel-recommended">
+      <div class="gel-header">
+        <h3 class="gel-name">UnTapped Maple</h3>
+        <span class="gel-badge">★ Race day</span>
+      </div>
+      <div class="gel-tag">Vermont · el más natural del mundo · 1 ingrediente</div>
+
+      <div class="gel-grid">
+        <div class="gel-key">Ingredientes</div>
+        <div class="gel-val ingredients">Maple syrup orgánico puro. La versión Coffee agrega café orgánico.</div>
+
+        <div class="gel-key">Carbos</div>
+        <div class="gel-val">21g por sachet (38g) · 100 kcal · 5mg sodio · 80mg potasio · 50+ polifenoles naturales</div>
+
+        <div class="gel-key">Dónde</div>
+        <div class="gel-val">REI San Francisco · A Runner's Mind · Whole Foods · Sports Basement</div>
+
+        <div class="gel-key">Precio</div>
+        <div class="gel-val">~USD 2.50 por gel</div>
+      </div>
+
+      <div class="gel-note">La evolución natural de tu estrategia de miel/dátiles. Si tu cuerpo ya tolera azúcares naturales, esto va a funcionar perfecto.</div>
+    </div>
+
+    <!-- MUIR -->
+    <div class="gel gel-recommended">
+      <div class="gel-header">
+        <h3 class="gel-name">Muir Energy</h3>
+        <span class="gel-badge">★ Recomendada</span>
+      </div>
+      <div class="gel-tag">San Diego · 4–6 ingredientes orgánicos certificados</div>
+
+      <div class="gel-grid">
+        <div class="gel-key">Ingredientes</div>
+        <div class="gel-val ingredients">Red Raspberry — raspberry orgánica dehidratada, raw coconut palm nectar, blackstrap molasses, sal Himalaya. Versiones con cafeína usan yerba mate.</div>
+
+        <div class="gel-key">Carbos</div>
+        <div class="gel-val">~24g por sachet · 100 kcal · gluten-free, vegan, paleo, non-GMO</div>
+
+        <div class="gel-key">Dónde</div>
+        <div class="gel-val">REI San Francisco · A Runner's Mind · Amazon</div>
+
+        <div class="gel-key">Precio</div>
+        <div class="gel-val">~USD 2.50–3 por gel</div>
+      </div>
+
+      <div class="gel-note">Dos líneas: "Fast Burning" (frutas para razas) y "Slow Burning" (nut butters para ultras). La fruit-based es perfecta para tu uso.</div>
+    </div>
+
+    <!-- SPRING -->
+    <div class="gel">
+      <div class="gel-header">
+        <h3 class="gel-name">Spring Energy</h3>
+      </div>
+      <div class="gel-tag">Bay Area · favorita de ultra runners US</div>
+
+      <div class="gel-grid">
+        <div class="gel-key">Ingredientes</div>
+        <div class="gel-val ingredients">Awesome Sauce — basmati rice, manzana, maple, cinnamon. CanaBerry — arroz, frutas, miel. Sin maltodextrina, sin sirope de arroz refinado, sin preservativos.</div>
+
+        <div class="gel-key">Carbos</div>
+        <div class="gel-val">20–45g por sachet (varía por flavor) · textura tipo puré</div>
+
+        <div class="gel-key">Dónde</div>
+        <div class="gel-val">REI San Francisco · A Runner's Mind</div>
+
+        <div class="gel-key">Precio</div>
+        <div class="gel-val">~USD 3–4 por gel</div>
+      </div>
+
+      <div class="gel-note">Awesome Sauce es legendario — sabor a tarta de manzana, textura cremosa. Perfecto para long runs largos. Speednut tiene cafeína.</div>
+    </div>
+
+    <!-- HUMA -->
+    <div class="gel">
+      <div class="gel-header">
+        <h3 class="gel-name">Hüma</h3>
+      </div>
+      <div class="gel-tag">Texas · fruit purée + chia · stomach-friendly</div>
+
+      <div class="gel-grid">
+        <div class="gel-key">Ingredientes</div>
+        <div class="gel-val ingredients">Fruit purée, cane sugar, brown rice syrup, chia seeds, sea salt, citric acid. Ratio 2:1 glucosa:fructosa.</div>
+
+        <div class="gel-key">Carbos</div>
+        <div class="gel-val">20–25g por sachet · 100 kcal</div>
+
+        <div class="gel-key">Dónde</div>
+        <div class="gel-val">REI · A Runner's Mind · Amazon</div>
+
+        <div class="gel-key">Precio</div>
+        <div class="gel-val">~USD 2.50 por gel</div>
+      </div>
+
+      <div class="gel-note">La fibra del chia suaviza la curva de energía. Buena alternativa si Muir/Untapped no convencen por textura.</div>
+    </div>
+
+    <!-- HONEY STINGER -->
+    <div class="gel">
+      <div class="gel-header">
+        <h3 class="gel-name">Honey Stinger Gold</h3>
+      </div>
+      <div class="gel-tag">Colorado · 95% miel orgánica · clásico</div>
+
+      <div class="gel-grid">
+        <div class="gel-key">Ingredientes</div>
+        <div class="gel-val ingredients">Miel orgánica, sal marina, ácido cítrico. Versión con cafeína agrega té verde.</div>
+
+        <div class="gel-key">Carbos</div>
+        <div class="gel-val">24g por sachet · 100 kcal</div>
+
+        <div class="gel-key">Dónde</div>
+        <div class="gel-val">REI · Whole Foods · cualquier supermercado grande</div>
+
+        <div class="gel-key">Precio</div>
+        <div class="gel-val">~USD 2 por gel</div>
+      </div>
+
+      <div class="gel-note">La versión empaquetada de tus sachets de miel del plan. Súper accesible, ubicuo en USA.</div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 04 — VS ============ -->
+  <section>
+    <div class="section-label">04 · Race day · cara a cara</div>
+    <h2>UnTapped <em>vs</em> Maurten.</h2>
+    <p class="lead">Las dos opciones más limpias del mundo, pensadas para race day. Acá el comparativo detallado para decidir cuál llevar el 23 de agosto.</p>
+
+    <table class="compare">
+      <thead>
+        <tr>
+          <th>Criterio</th>
+          <th>UnTapped Maple</th>
+          <th>Maurten Gel 100</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Ingredientes</td><td>1 — maple syrup</td><td>6 — agua, glucosa, fructosa, alginato, ác. glucónico, calcio</td></tr>
+        <tr><td>Carbohidratos</td><td>21g · 100 kcal</td><td>25g · 100 kcal</td></tr>
+        <tr><td>Ratio glucosa:fructosa</td><td>~1:1 (natural)</td><td>1:0.8 (científico óptimo)</td></tr>
+        <tr><td>Absorción máxima/hora</td><td>~60g/hora (límite natural)</td><td>Hasta 100g/hora (hidrogel)</td></tr>
+        <tr><td>Textura</td><td>Líquida, dulce suave</td><td>Gelatinosa firme, neutra</td></tr>
+        <tr><td>Necesita agua</td><td>Sí, recomendado</td><td>No (hidratación dentro)</td></tr>
+        <tr><td>Versión cafeína</td><td>Coffee — maple + café orgánico</td><td>Caf 100 — 100mg cafeína</td></tr>
+        <tr><td>Antioxidantes</td><td>50+ polifenoles</td><td>Ninguno (solo carbs)</td></tr>
+        <tr><td>Usado por</td><td>Ultras, trail, Sage Canaday</td><td>Kipchoge, majors mundiales</td></tr>
+        <tr><td>Precio aprox</td><td>USD 2.50 en SF</td><td>ARS 2.200 en BA</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Análisis para tu caso específico</h3>
+
+    <p>A tu pace e intensidad (6:25/km, 2h15 totales), no necesitás los 100g/hora que habilita Maurten. Ese beneficio recién importa en maratón sub-3h o ultras de muchas horas. Para vos, el plus técnico de Maurten es marginal.</p>
+
+    <p>Tu estómago ya viene entrenado con naturales: durante todo el plan estás usando dátiles + miel. UnTapped es literalmente lo mismo en versión líquida. Maurten es algo nuevo para tu sistema — la matriz hidrogel se siente diferente.</p>
+
+    <p>Maurten gana en logística de race day: no necesita agua, se puede tragar entre puestos, textura predecible. UnTapped gana en coherencia con tu filosofía y entrenamiento de estómago.</p>
+
+    <div class="callout">
+      <div class="callout-label">Veredicto</div>
+      <p>Llevar ambos desde SF. Probar en <strong>W13</strong> (simulación race del 11 julio) los UnTapped, y en <strong>W14</strong> los Maurten. El que tu estómago tolere mejor a marathon pace gana race day. Apostaría por <strong>UnTapped</strong> — es la elección más coherente con la filosofía natural que venís construyendo.</p>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 05 — COMPRA ============ -->
+  <section>
+    <div class="section-label">05 · Plan de compra</div>
+    <h2>Qué comprar, <em>cuándo</em>, dónde.</h2>
+
+    <h3>Ahora en Buenos Aires · mayo</h3>
+    <p>Para arrancar los tests gel desde W7 (30 mayo) y cubrir todo hasta el viaje a SF en junio.</p>
+
+    <table class="buy-table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Para</th>
+          <th>Costo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Chitaka x12 (mix sabores)</td>
+          <td>1 caja</td>
+          <td>Tests W7, W9 + Race 15K + Race 10K + buffer</td>
+          <td class="num">$44.460 ARS</td>
+        </tr>
+        <tr>
+          <td>Maurten Gel 100 (opcional)</td>
+          <td>3 unidades</td>
+          <td>Probar como referencia</td>
+          <td class="num">$6.600 ARS</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="strip">
+      <div class="strip-line"></div>
+      <div class="strip-mark">en San Francisco</div>
+      <div class="strip-line"></div>
+    </div>
+
+    <h3>En San Francisco · junio</h3>
+    <p>La compra estratégica del viaje. Cabe en una bolsa de mano. Cubre todos los long runs y la race day del 23 de agosto.</p>
+
+    <table class="buy-table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Para</th>
+          <th>Costo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>UnTapped Maple</td>
+          <td>8 unidades</td>
+          <td>Tests + race day + buffer</td>
+          <td class="num">USD 20</td>
+        </tr>
+        <tr>
+          <td>UnTapped Coffee (con café)</td>
+          <td>4 unidades</td>
+          <td>Tests km 14 + race day km 14</td>
+          <td class="num">USD 10</td>
+        </tr>
+        <tr>
+          <td>Muir Energy (Raspberry + Strawberry)</td>
+          <td>6 unidades</td>
+          <td>Long runs W10, W13, W14, W16</td>
+          <td class="num">USD 15</td>
+        </tr>
+        <tr>
+          <td>Spring Energy Awesome Sauce</td>
+          <td>4 unidades</td>
+          <td>Long runs largos (textura puré)</td>
+          <td class="num">USD 14</td>
+        </tr>
+        <tr>
+          <td>Maurten Gel 100 (opcional)</td>
+          <td>6 unidades</td>
+          <td>Test comparativo + backup race</td>
+          <td class="num">USD 24</td>
+        </tr>
+        <tr class="total">
+          <td>Total estimado</td>
+          <td>28 geles</td>
+          <td></td>
+          <td class="num">USD 83</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top: 56px;">Dónde comprar en SF</h3>
+    <div class="stores">
+      <div class="store">
+        <div class="store-name">REI San Francisco</div>
+        <div class="store-info">840 Brannan St (SoMa) — la opción más completa, tiene todas las marcas naturales</div>
+      </div>
+      <div class="store">
+        <div class="store-name">A Runner's Mind</div>
+        <div class="store-info">3575 Sacramento St (Laurel Heights) — staff experto, atendida por corredores. Al lado del Presidio para hacer test run después</div>
+      </div>
+      <div class="store">
+        <div class="store-name">Sports Basement</div>
+        <div class="store-info">Sucursales varias (Presidio principal) — más casual, buenos precios, selección amplia</div>
+      </div>
+      <div class="store">
+        <div class="store-name">Whole Foods</div>
+        <div class="store-info">Cualquier sucursal — UnTapped y Honey Stinger se consiguen en góndola</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 06 — CRONOGRAMA ============ -->
+  <section>
+    <div class="section-label">06 · Cronograma</div>
+    <h2>Semana por <em>semana</em>.</h2>
+    <p class="lead">Cómo encaja cada gel en tu plan de 19 semanas. La progresión respeta tu lógica original: naturales en entrenos, geles solo cuando son necesarios, con prueba previa antes de cada race.</p>
+
+    <table class="calendar">
+      <thead>
+        <tr>
+          <th>Semana</th>
+          <th>Fecha</th>
+          <th>Sesión clave</th>
+          <th>Fueling</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>W3</td><td>2 may</td><td>Long 11km</td><td>1 dátil min 45</td></tr>
+        <tr><td>W5</td><td>16 may</td><td>Long 14km</td><td>2 dátiles min 40</td></tr>
+        <tr><td>W7</td><td>30 may</td><td>Long 10km · test gel</td><td><span class="gel-mark">Chitaka</span> pre + Chitaka min 45</td></tr>
+        <tr class="highlight"><td>W8 · Race</td><td>7 jun</td><td>15K Adizero</td><td><span class="gel-mark">Chitaka</span> pre + Chitaka km 9</td></tr>
+        <tr><td>W9</td><td>13 jun</td><td>Long 12km · 2do test</td><td>Chitaka o <span class="gel-mark">UnTapped</span> si ya en SF</td></tr>
+        <tr><td>W10</td><td>20 jun</td><td>Long 16km</td><td><span class="gel-mark">Muir</span> min 30 + min 65</td></tr>
+        <tr class="highlight"><td>W11 · Race</td><td>28 jun</td><td>10K Invierno</td><td><span class="gel-mark">UnTapped</span> pre · sin gel durante</td></tr>
+        <tr><td>W12</td><td>4 jul</td><td>Long 14km</td><td>2 Muir o sachets miel</td></tr>
+        <tr><td>W13</td><td>11 jul</td><td>Long 18km · simulación race</td><td><span class="gel-mark">UnTapped</span> pre + Spring Awesome km 7 + UnTapped Coffee km 14</td></tr>
+        <tr><td>W14</td><td>18 jul</td><td>Long 19km</td><td>UnTapped pre + 2 Muir cada 35min · O probar Maurten</td></tr>
+        <tr><td>W15</td><td>25 jul</td><td>Long 14km descarga</td><td>2 Muir o 1 sachet miel</td></tr>
+        <tr><td>W16</td><td>1 ago</td><td>Long 17km con MP</td><td>UnTapped pre + UnTapped km 7 + Muir km 12</td></tr>
+        <tr class="highlight"><td>W17 · Dress rehearsal</td><td>8 ago</td><td>Long 19km con MP</td><td>Exactamente la combinación del race day</td></tr>
+        <tr><td>W18</td><td>15 ago</td><td>Medio-long taper 13km</td><td>Sin fuel · corte limpio</td></tr>
+        <tr class="highlight"><td>W19 · RACE DAY</td><td>23 ago</td><td>21K Buenos Aires</td><td><span class="gel-mark">UnTapped pre + UnTapped km 7 + UnTapped Coffee km 14</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ SECTION 07 — TIPS ============ -->
+  <section>
+    <div class="section-label">07 · Recordatorios</div>
+    <h2>Reglas de <em>oro</em>.</h2>
+
+    <h3>Cómo tomar los geles</h3>
+    <ul>
+      <li><strong>Siempre con agua</strong>, nunca con bebida deportiva. El gel ya tiene azúcares concentrados, duplicarlos satura el estómago.</li>
+      <li><strong>Tomalo en 3–4 sorbos consecutivos</strong>, no de un trago. Seguilo con 100–150ml de agua inmediatamente.</li>
+      <li><strong>Llevalos en flip belt o cinturón</strong>, no en la mano.</li>
+      <li><strong>Guardá el sobre usado</strong> en el bolsillo — nunca tires basura en la ruta.</li>
+      <li><strong>Cafeína</strong>: reservala para la segunda mitad del race. Tarda 45–60 min en hacer efecto.</li>
+      <li><strong>Nunca probar un gel nuevo el día del race.</strong> Mínimo 2–3 long runs previos con el mismo producto.</li>
+    </ul>
+
+    <h3>Carb loading pre-race</h3>
+    <div class="two-col">
+      <div class="two-col-label">2 días antes</div>
+      <div><strong>7g/kg = ~427g carbos.</strong> Hidratate mucho — cada gramo de carb se almacena con 3g de agua.</div>
+    </div>
+    <div class="two-col">
+      <div class="two-col-label">1 día antes</div>
+      <div><strong>8g/kg = ~488g carbos.</strong> El almuerzo es la comida más grande del día, no la cena.</div>
+    </div>
+    <div class="two-col">
+      <div class="two-col-label">Mañana del race</div>
+      <div><strong>1.5–2g/kg = 92–122g carbos</strong> · 3–4hs antes. Bagel + mermelada + banana + jugo.</div>
+    </div>
+
+    <h3>Señales de alarma durante el race</h3>
+    <ul>
+      <li>Si tomás un gel y a los 5 min sentís malestar — tomá agua extra y reducí pace 10–15s/km hasta que pase.</li>
+      <li>Si en km 10 tu HR ya está en 170+, afloja — vas muy fuerte.</li>
+      <li>Nunca km 1–3 bajo 6:30. Salir conservadora es no negociable.</li>
+      <li>Si hace más de 22°C — sumá 10–15s al pace y reset target a 2h18–2h20.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Recordá</div>
+      <p>Con un buen carb loading, tu glucógeno aguanta técnicamente todo el 21K. Los 3 geles no son para sobrevivir — son buffer de seguridad para mantener glucosa en sangre alta y que cerebro y músculo funcionen bien bajo fatiga. <strong>No te estás privando de nada al ir con poco. Es lo mínimo efectivo, basado en consenso científico actual.</strong></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    Guía generada en mayo 2026 · Basada en deep research de marcas disponibles en BA y SF<br>
+    Referencias · Jeukendrup · Costa · Skratch Labs · Precision Fuel · ACSM · Fabricantes oficiales
+  </footer>
+
+</div>
+</body>
+</html>

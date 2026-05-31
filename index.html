@@ -1452,6 +1452,43 @@
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
+
+  .gel-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    padding: 14px 28px;
+    background: var(--accent);
+    color: #0a0a0a;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.15s, transform 0.15s;
+  }
+
+  .gel-cta:hover {
+    background: #e8ff6a;
+    transform: translateX(3px);
+  }
+
+  .gel-cta::after {
+    content: '→';
+    font-size: 14px;
+  }
+
+  .nav-link.nav-link-external {
+    border-left: 1px solid var(--accent);
+    color: var(--accent);
+  }
+
+  .nav-link.nav-link-external:hover {
+    background: var(--accent);
+    color: #0a0a0a;
+  }
 </style>
 </head>
 <body>
@@ -1508,6 +1545,7 @@
       <a href="#fueling" class="nav-link" data-target="fueling"><span class="nav-num">04</span>Fueling</a>
       <a href="#race" class="nav-link" data-target="race"><span class="nav-num">05</span>Race Day</a>
       <a href="#strava" class="nav-link" data-target="strava"><span class="nav-num">06</span>Strava</a>
+      <a href="guia_geles_lara_21k.html" class="nav-link nav-link-external"><span class="nav-num">★</span>Geles</a>
     </div>
   </div>
 </nav>
@@ -1536,6 +1574,7 @@
         <span class="meta-value">3 días · sem</span>
       </div>
     </div>
+    <a href="guia_geles_lara_21k.html" class="gel-cta">Guía de geles</a>
   </div>
 </div>
 
@@ -3488,10 +3527,11 @@ const TERM_PATTERNS = [
 (function initNavMenu() {
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('data-target');
+      if (!targetId) return; // links externos (sin data-target) navegan normal
       e.preventDefault();
       e.stopPropagation();
-      const targetId = link.getAttribute('data-target');
-      if (!targetId || targetId === 'today') return; // "Hoy" handled separately
+      if (targetId === 'today') return; // "Hoy" handled separately
       const target = document.getElementById(targetId);
       if (target) {
         const offset = 70; // account for sticky nav
