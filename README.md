@@ -1,6 +1,6 @@
 # running-plan
 
-A personal training plan for the **Buenos Aires Half-Marathon 2026** (21K, 23 Aug 2026), built as a single static page with a Strava integration that pulls my actual runs and tracks weekly progress against the plan.
+A personal training plan for the **Buenos Aires Half-Marathon 2026** (21K, 23 Aug 2026), built as a small static site with a Strava integration that pulls my actual runs and tracks weekly progress against the plan.
 
 **Live:** [running-plan-ochre.vercel.app](https://running-plan-ochre.vercel.app)
 
