@@ -1681,6 +1681,24 @@
     /* sin hover (mobile): un poco menos blurry para que se pueda leer */
     .archive-inner { filter: blur(1.2px) grayscale(0.6); opacity: 0.6; }
   }
+
+  /* Semana tipo */
+  .week-pattern {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    margin-bottom: 12px;
+  }
+  .wp-day { background: var(--bg-card); padding: 18px 20px; display: flex; flex-direction: column; gap: 4px; }
+  .wp-name { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); }
+  .wp-type { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; color: var(--accent); }
+  .wp-desc { font-size: 13px; color: var(--ink-dim); }
+  .wp-note { font-size: 13px; color: var(--ink-dim); margin-bottom: 32px; }
+  @media (max-width: 720px) {
+    .wp-day { padding: 14px; }
+    .wp-type { font-size: 18px; }
+  }
 </style>
 </head>
 <body>
@@ -1878,31 +1896,31 @@
           <td class="pace-name">Recovery</td>
           <td class="pace-value">7:50 – 8:20</td>
           <td class="pace-hr">&lt; 140 bpm</td>
-          <td class="pace-desc">Después de carrera, shakeouts</td>
+          <td class="pace-desc">Martes después de carrera</td>
         </tr>
         <tr>
           <td class="pace-name">Easy</td>
           <td class="pace-value">7:20 – 7:45</td>
           <td class="pace-hr">140 – 150 bpm</td>
-          <td class="pace-desc">Rodajes de martes/miércoles</td>
+          <td class="pace-desc">Martes · rodaje</td>
         </tr>
         <tr>
           <td class="pace-name">Fondo</td>
           <td class="pace-value">7:15 – 7:40</td>
           <td class="pace-hr">145 – 155 bpm</td>
-          <td class="pace-desc">Fondo del fin de semana</td>
+          <td class="pace-desc">Domingo · fondo</td>
         </tr>
         <tr>
           <td class="pace-name">Tempo / Umbral</td>
           <td class="pace-value">6:10 – 6:20</td>
           <td class="pace-hr">165 – 172 bpm</td>
-          <td class="pace-desc">Bloques de 10'</td>
+          <td class="pace-desc">Jueves · bloques de 10'</td>
         </tr>
         <tr>
           <td class="pace-name">Ritmo 10K (meta 60')</td>
           <td class="pace-value">5:55 – 6:05</td>
           <td class="pace-hr">170 – 176 bpm</td>
-          <td class="pace-desc">Repeticiones de 800 m – 1 km y carrera</td>
+          <td class="pace-desc">Jueves · 800 m – 1 km, y carrera</td>
         </tr>
         <tr>
           <td class="pace-name">Strides (15–20s)</td>
@@ -1929,6 +1947,13 @@
         <h2>5 semanas, <em>2 carreras</em>.</h2>
       </div>
     </div>
+
+    <div class="week-pattern">
+      <div class="wp-day"><span class="wp-name">Martes</span><span class="wp-type">Easy</span><span class="wp-desc">Rodaje suave + strides</span></div>
+      <div class="wp-day"><span class="wp-name">Jueves</span><span class="wp-type">Calidad</span><span class="wp-desc">Intervalos o tempo</span></div>
+      <div class="wp-day"><span class="wp-name">Domingo</span><span class="wp-type">Fondo</span><span class="wp-desc">Long run easy</span></div>
+    </div>
+    <p class="wp-note">Esta semana arranca corrida: miércoles, viernes y domingo. En las semanas de carrera, la carrera reemplaza al fondo.</p>
 
     <div class="phase-nav">
       <a href="#fase1" class="phase-pill">Reactivación + Night Run</a>
@@ -1997,26 +2022,26 @@
         <div class="workout">
           <div class="workout-day">Mar 24</div>
           <div class="workout-body">
-            <div class="workout-type">Afilado</div>
-            <div class="workout-detail">1,5 km WU + 3 × 1 km a ritmo carrera (2' trote) + 1,5 km CD</div>
+            <div class="workout-type">Easy + strides</div>
+            <div class="workout-detail">5 km suaves + 4 × 20" strides</div>
             <div class="workout-specs">
-              <span class="spec">Total · <strong>~6,5 km</strong></span>
-              <span class="spec">1 km · <strong>6:00–6:05</strong></span>
+              <span class="spec">Pace · <strong>7:20–7:45</strong></span>
+              <span class="spec">HR · <strong>&lt;150</strong></span>
             </div>
           </div>
         </div>
         <div class="workout">
           <div class="workout-day">Jue 26</div>
           <div class="workout-body">
-            <div class="workout-type">Shakeout</div>
-            <div class="workout-detail">4 km muy suaves + 4 × 15" strides</div>
+            <div class="workout-type">Afilado · calidad corta</div>
+            <div class="workout-detail">1,5 km WU + 2 × 1 km a ritmo carrera (2' trote) + 4 strides + 1,5 km CD. Corto y vivo: dos días antes de la carrera no se gana nada, solo se mantiene el filo.</div>
             <div class="workout-specs">
-              <span class="spec">Pace · <strong>7:45–8:10</strong></span>
-              <span class="spec">HR · <strong>&lt;145</strong></span>
+              <span class="spec">Total · <strong>~5,5 km</strong></span>
+              <span class="spec">1 km · <strong>6:00–6:05</strong></span>
             </div>
           </div>
         </div>
-        <div class="workout race">
+<div class="workout race">
           <div class="workout-day">Sáb 28</div>
           <div class="workout-body">
             <div class="workout-type">adidas 10K Night Run · 20:30</div>
@@ -2047,8 +2072,8 @@
         <div class="workout">
           <div class="workout-day">Mar 01</div>
           <div class="workout-body">
-            <div class="workout-type">Recovery</div>
-            <div class="workout-detail">5 km muy suaves. Las piernas todavía tienen la carrera del sábado.</div>
+            <div class="workout-type">Easy · post-carrera</div>
+            <div class="workout-detail">5 km muy suaves. Las piernas todavía tienen la carrera del sábado: ritmo recovery.</div>
             <div class="workout-specs">
               <span class="spec">Pace · <strong>7:50–8:20</strong></span>
               <span class="spec">HR · <strong>&lt;140</strong></span>
@@ -2068,7 +2093,7 @@
           </div>
         </div>
         <div class="workout">
-          <div class="workout-day">Sáb 05</div>
+          <div class="workout-day">Dom 06</div>
           <div class="workout-body">
             <div class="workout-type">Fondo easy</div>
             <div class="workout-detail">9 km continuos</div>
@@ -2114,7 +2139,7 @@
           </div>
         </div>
         <div class="workout">
-          <div class="workout-day">Sáb 12</div>
+          <div class="workout-day">Dom 13</div>
           <div class="workout-body">
             <div class="workout-type">Fondo con final rápido</div>
             <div class="workout-detail">11 km: 9 km easy + 2 km a ritmo 10K. Te enseña a apretar cansada.</div>
@@ -2134,13 +2159,24 @@
           <span class="week-name">Taper · Estaciones</span>
           <span class="week-dates">14–20 DIC</span>
         </div>
-        <span class="week-volume">~21 km</span>
+        <span class="week-volume">~23 km</span>
       </div>
       <div class="workouts">
         <div class="workout">
           <div class="workout-day">Mar 15</div>
           <div class="workout-body">
-            <div class="workout-type">Afilado</div>
+            <div class="workout-type">Easy + strides</div>
+            <div class="workout-detail">5 km suaves + 4 × 20" strides</div>
+            <div class="workout-specs">
+              <span class="spec">Pace · <strong>7:20–7:45</strong></span>
+              <span class="spec">HR · <strong>&lt;150</strong></span>
+            </div>
+          </div>
+        </div>
+        <div class="workout">
+          <div class="workout-day">Jue 17</div>
+          <div class="workout-body">
+            <div class="workout-type">Afilado · calidad corta</div>
             <div class="workout-detail">1,5 km WU + 3 × 1 km a ritmo objetivo (2' trote) + 1,5 km CD</div>
             <div class="workout-specs">
               <span class="spec">Total · <strong>~6,5 km</strong></span>
@@ -2148,18 +2184,7 @@
             </div>
           </div>
         </div>
-        <div class="workout">
-          <div class="workout-day">Vie 18</div>
-          <div class="workout-body">
-            <div class="workout-type">Shakeout</div>
-            <div class="workout-detail">3–4 km muy suaves + 4 × 15" strides</div>
-            <div class="workout-specs">
-              <span class="spec">Pace · <strong>7:45–8:10</strong></span>
-              <span class="spec">HR · <strong>&lt;145</strong></span>
-            </div>
-          </div>
-        </div>
-        <div class="workout race">
+<div class="workout race">
           <div class="workout-day">Dom 20</div>
           <div class="workout-body">
             <div class="workout-type">Circuito de las Estaciones · Verano 10K · 07:30</div>
